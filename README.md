@@ -1,6 +1,6 @@
-# ADEMP Preregistration
+# ADEMP Preregistration for Evaluating Large Language Model (LLM) output
 
-This documentation of the modified ADEMP-PreReg template for LLM (large language model) simulations is based on the documentation of the ADEMP Pre-Reg tempalte for simulation studies by Siepe et al. (2024, <https://github.com/bsiepe/ADEMP-PreReg>).
+This documentation of the modified ADEMP-PreReg template for LLM simulations is based on the documentation of the ADEMP Pre-Reg tempalte for simulation studies by Siepe et al. (2024, <https://github.com/bsiepe/ADEMP-PreReg>).
 
 This repository contains the ADEMP preregistration (ADEMP-PreReg) template for conducting LLM Simulation Studies proposed by Angelike and Heck (2026, <LINK XXX>). The template is modified version of the ADEMP template for simulation studies in methodological research by Siepe et al. (2024, <https://doi.org/10.1037/met0000695>). The ADEMP structure was originally proposed by Morris et al. (2019, <https://doi.org/10.1002/sim.8086>). The ADEMP template for LLM simulation studies can be employed in any studies that aims at evaluating the quality of LLM-generated output.
 ## How to use it?
