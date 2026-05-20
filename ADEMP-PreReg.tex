@@ -1,0 +1,316 @@
+\documentclass[12pt]{article}
+
+% refer to configurations.tex for the LaTeX setup of this template
+\input{configurations.tex}
+
+% Optional user settings
+\setboolean{showinstructions}{true} % set to false to hide instructions
+\setboolean{showexamples}{true} % set to false to hide examples
+\setboolean{showexplanations}{true} % set to false to hide explanations
+
+\begin{document}
+\maketitlepage
+
+\instructions{\section{Instructions}
+\subsection*{General Information}
+This template is a modified version of the ADEMP-PreReg template by \cite{siepeSimulationStudiesMethodological2024} based on the ADEMP framework \parencite{morrisUsingSimulationStudies2019} for planning, structuring, and/or preregistering Monte Carlo simulation studies. The present, adapted template considers the repeated generation of output from one or more large language models (LLMs) for feature extraction as a simulation study. The preprint associated with this template is Angelike and Heck (2026). Alternative Google Docs and Word versions of this template are available at (\url{XXXXX}). To preregister and time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated articles \parencite{siepeSimulationStudiesMethodological2024, Angelike&Heck}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). For \LaTeX{} users of this template, we provide simple commands to exclude the instructions, explanations, and example boxes from their compiled document.  \\
+
+\subsection*{Using this template} 
+This template can be used for any study aiming to extract features of text material by LLMs via prompting. LLMs may be used to extract psychological meaning from text data according to the instructions provided by the user (e.g., ratings of the input text regarding semantic or syntactic properties). Potential applications include the annotation, classification, or rating of text data. When using LLMs in psychological research, there are many degrees of freedom in the execution of such applications: different task instructions, prompt details, and model versions may lead to varying LLM output. Even when all factors are held constant, repeated replications of the same prompt may yield different results. The present template treats LLM prompting as a specific type of simulation study, where the quality of the output can be evaluated as a function of many (often arbitrary) decisions concerning the prompt design, model choice, and implementation. 
+
+Please provide detailed answers to each of the questions. If you plan to perform multiple LLM simulation studies within the same project, you can either register them separately or number your answers to each question with an indicator for each study. As the planning and execution of LLM simulation studies often involves considerable complexity and unknowns, it may be difficult to answer all the questions in this template or some changes may be made along the analysis pathway. This is to be expected and should not deter from planning or preregistering an LLM simulation study. If you pre-registered your LLM simulation, any modifications to the protocol should simply be reported transparently along with justification, which will ultimately add credibility to your research.   
+}
+
+\section{General Information}
+\subsection{What is the title of the project?}
+
+\begin{examplebox}
+Evaluating the quality of LLM ratings for the valence and arousal of multi-word expressions
+\end{examplebox}
+
+\textit{Answer:}
+
+\subsection{Who are the current and future project contributors?}
+
+\begin{examplebox}
+    Tim Angelike and Daniel Heck
+\end{examplebox}
+
+\textit{Answer:}
+
+\subsection{Provide a description of the project.}
+
+\explanation{This can include the overarching research questions and goals as well as empirical data that will be analyzed within the same project. If you are planning to conduct not only a simulation study but also an empirical study with human raters to validate the LLM output, we recommend to pre-register the empirical study separately (e.g. regarding the study design and how to deal with outliers or missing data).} 
+
+\begin{examplebox}
+    We will investigate the quality of LLM-generated ratings of valence and arousal regarding multi-word expressions curated by Martínez et al. \parencite*{martinezUsingLargeLanguage2024}. In two separate simulation studies, we will vary the specific LLM and the prompt structure composed of the required response format and the examples provided to the models as context. Our analysis will focus on (1) a variance decomposition of LLM-generated ratings (2) the correlation of LLM and human ratings of valence and arousal. Human-generated ratings of valence and arousal were also provided by Martínez et al. \parencite*{martinezUsingLargeLanguage2024}. We plan to report only the results for valence in the main body of the text, whereas the results for arousal will be reported in the supplementary material.  .  
+\end{examplebox}
+
+\textit{Answer:}
+
+\subsection{Did any of the contributors already conduct related simulation studies on this specific question?}
+
+\explanation{This includes preliminary LLM prompting in the context of the current project.} 
+
+\begin{examplebox}
+   Before conducting the simulation, preliminary tests were run on ratings of syntactic complexity curated by Schmidt and Heck \parencite*{schmidtRelevanceSyntacticComplexity2024} to ascertain the functionality of the analysis pipeline..
+\end{examplebox}
+
+\textit{Answer:}
+
+\section{Aims}
+\subsection{What is the aim of the LLM simulation study?}
+ 
+\explanation{The aim of a LLM simulation study refers to the goal of the research and shapes subsequent choices. Aims are typically related to evaluating the capability of different LLMs to fulfill a particular task for feature extraction. Depending on whether an external validation criterion is available to evaluate the LLM output, one can distinguish between two types of aims: 
+
+\begin{enumerate}
+    \item Investigating variance components in extracted features to distinguish: (1) \textit{construct variance} reflecting stimulus differences, (2) \textit{method variance} introduced by factors such as model choice or prompt design, and (3) LLM stochasticity due to independent repetitions of the same prompt. Potential aims include a variance decomposition of LLM ratings regarding different models and prompting approaches, or the assessment of inter-rater reliability between different LLMs or between the stochastic, repeated output of the same LLM.
+    \item Investigating the correspondence of ratings obtained from one or more LLMs with an external gold standard, e.g., human ratings for the same task. This aim is most closely related to the traditional idea of simulation studies where a statistical method is evaluated with respect to its performance in recovering known, true parameters.
+\end{enumerate}} 
+    
+\begin{examplebox}
+    The aims of the present study are (1) to conduct a variance decomposition of LLM ratings of valence and arousal regarding multi-word expressions into method variance (due to specific LLM and prompt variations) and construct variance (due to differences in the valence and arousal of the included statements) and (2) to assess the extent to which LLM ratings correspond to the perceived valence and arousal of multi-word expressions as rated by humans. 
+\end{examplebox}
+
+\textit{Answer:}
+
+
+\section{Data-Generating Mechanism}
+\subsection{Which materials will be used as input for LLM prompting?}
+
+\explanation{The stimulus materials used for LLM prompting (i.e., the corpus) can include statements, questions, vignettes, or items from a personality inventory. The specific set of input materials determines the scope and the generalizability of the observed findings regarding the quality of features extracted by LLMs. If the corpus consists only of statements assessing a particular psychological construct, the results of the LLM performance evaluation are informative only for comparable materials and constructs. Hence, it should be ensured that the verbal materials used as input are sufficiently broad and heterogeneous to increase the generalizability of conclusions. However, what constitutes sufficiently diverse data as input depends on the research question.  } 
+    
+\begin{examplebox}
+    Our study uses two different sets of $n_{\text{items}}$ = 96 English multi-word expressions developed by Martínez et al. \parencite*{martinezUsingLargeLanguage2024}. The first set of multi-word expressions were rated regarding their valence by human raters in Experiment 4 of Martínez et al. \parencite*{martinezUsingLargeLanguage2024}. The second set of multi-word expressions were rated regarding their arousal by human raters in Experiment 5 of Martínez et al. \parencite*{martinezUsingLargeLanguage2024}. All analyses were conducted separately for the multi-word expressions of valence and arousal but with identical methodology reported in the following. 
+\end{examplebox}
+
+\textit{Answer:}
+
+
+\subsection{Which procedures will be used to obtain LLM output?} 
+
+\explanation{LLM feature extraction should proceed in an automated and standardized manner. Describe all procedural details that are identical across all simulation conditions. Specify only the general structure of the LLM prompt here but report specific details of the prompt design that vary across conditions in Section 5 (Methods). Clearly state what type of software is used to obtain LLM ratings (e.g., a closed API, an open-weights models run locally, or access through a chat interface). Furthermore, state whether and how a specific response format was ensured, for instance, by including specific instructions in the prompt or requiring LLM output to have a specific format such as JSON. Specify how LLM output will be handled that is not structured as intended (e.g., non-numeric output).}
+
+\begin{examplebox}
+We will use open-weights LLMs which are run locally through the software \texttt{Ollama} and are accessed via the R package \texttt{ellmer}. To ensure that LLM ratings of valence and arousal only consist of numerical values, we use the \verb|type_object()| and \verb|type_integer()| functions to request output in JSON format with a predetermined response format of integers. Each prompt is composed according to the structure used by Martínez et al. \parencite*{martinezUsingLargeLanguage2024} in prompt 2 (valence) and prompt 3 (arousal) of their paper: (1) An explanation of the task, (2) the range of responses allowed, (3) examples for multi-word expressions, (4) the target multi-word expression to be rated, and (5) a reminder for the range of responses allowed.
+\end{examplebox}
+
+\textit{Answer:}
+    
+
+\section{Estimands and Targets}
+\subsection{What will be the estimands and/or targets of the LLM simulation study?}      
+
+\explanation{Estimands and other targets refer to the practical aims of the compared methods. In contrast to traditional simulation studies (see \cite{siepeSimulationStudiesMethodological2024}), the estimands in an LLM simulation study are not certain parameters of a statistical method, but rather features to be extracted from text data. Additional estimands could be LLM ratings of meta-cognitive uncertainty of a model regarding its own ratings. Please also specify if some targets are considered more important than others, i.e., if the simulation study will have primary and secondary outcomes.} 
+    
+\begin{examplebox}
+Our target estimands are the valence and arousal of multi-word expressions (where the scale varies across conditions; see Section 6.2)
+\end{examplebox}  
+
+\textit{Answer:}
+
+\section{Methods}
+\subsection{Which LLMs will be used for feature extraction?}
+    
+\explanation{LLMs differ in numerous aspects, e.g., the architecture, the number of parameters, the company or institution developing a model, the language in which they were trained, and whether model weights and/or information about the training procedure are publicly available. State which LLMs will be used and describe deviations in any model parameters, such as temperature, from their default values. If possible, include information on why you selected the models, which can concern aspects such as availability, expected costs, openness, and/or computational feasibility. A fully factorial design including all combinations of LLM model families and different model sizes may often be infeasible, and thus we recommend including all investigated LLM model versions as a single factor in the analysis (as opposed to handling model family and model size as separate factors).}
+
+\begin{examplebox}
+We include eight open-weights models by four companies that can efficiently be run locally using Ollama on a GPU with 32GB VRAM without requiring access to an online service. The eight models are gemma3 (with 4b, 12b, and 27b parameters; Google), llama3.1 (8b parameters; Meta), phi3 (3.8b, 14b parameters; Microsoft), phi4 (14b parameters; Microsoft), and gpt-oss (20b parameters; OpenAI). All model parameters, such as temperature, were kept at their default values. All models were updated to their most recent version at 28/01/2026. 
+\end{examplebox} 
+
+
+\subsection{How will LLM prompts be structured and formulated?}
+    
+\explanation{Be as specific as possible regarding the procedure that will be used to construct LLM prompts. Include information about specific parts of the prompts, such as system prompts that may contain context about the purpose of the task, instructions for the LLM on which scale to return ratings, and whether examples are provided or not (zero-shot vs. few-shot prompting). Depending on the research question, a fully factorial design or a single factor containing all distinct prompt versions may be appropriate. To ensure that the comparison is meaningful, the same prompt versions should be used for all LLM versions. }
+
+\begin{examplebox}
+We adopt the prompt design by Martínez et al. (2024) to obtain valence and arousal ratings separately while manipulating two key components in a fully factorial setting:
+
+\begin{enumerate}
+    \item The format of the rating task (a scale from 1 to 9 vs. a scale from 0 to 100) and 
+    \item The presence and type of example statements provided: no example statements; three examples for low valance (or arousal); three examples for high valance (or arousal); or three examples for both low and high valence (or arousal). The last condition corresponds to the original prompt design used in Martínez et al. \parencite*{martinezUsingLargeLanguage2024}.
+\end{enumerate}
+
+Ratings of valence and arousal will be obtained in two separate and independent steps of the LLM simulation. We will not modify the LLM system prompt provided before the rating task. Example prompts can be found at the end of this document in the Appendix.
+
+\end{examplebox} 
+
+\textit{Answer:}
+
+\section{Performance Measures}
+\subsection{Which performance measures will be used?}    
+
+\explanation{Please state why specific performance measures are used and how they will be calculated. You may provide formulas to avoid ambiguity. The choice for specific performance measures strongly depends on the aim of the investigation. If the aim is to analyze the proportion of variance in LLM ratings due to different LLM model versions or prompt instructions, it may be necessary to specify a suitable ANOVA or mixed effects model depending on the factorial simulation design. If an external criterion is available against which LLM output is compared (e.g., human ratings), the inter-rater reliability between human ratings and LLM ratings may be computed as the correlation of ratings across all stimulus materials. In some scenarios, it may also be of interest to compare LLM output to an established gold standard using the bias or RMSE (e.g., when assessing whether LLMs can accurately predict a certain outcome of interest).}  
+    
+\begin{examplebox}
+The present investigation has two aims:
+
+\begin{enumerate}
+    \item Analyzing the proportion of variance in LLM valence and arousal explained by differences in the stimulus materials and differences in methods (secondary performance measure).
+    \item Assessing the correlation between human and LLM ratings of valence and arousal (primary performance measure).
+\end{enumerate}
+
+All analyses will be conducted separately for expressions rated regarding their valence and the expressions rated regarding their arousal. \\
+
+Regarding aim (1), we will estimate the following linear model using the lm() function in R 
+
+\begin{itemize}
+    \item \verb|lm(llm_rating ~ stimulus * model * format * example)|
+\end{itemize}
+
+The “stimulus“ term accounts for differences in the target construct between the statements (i.e., actual differences in valence or arousal). If the linear model cannot be fitted due to convergence issues, we will simplify the model structure by iteratively dropping higher-order interactions (first, the four-way interaction, then the three-way interactions not including the “stimulus” term and so on). 
+
+The fitted linear model will then be used to compute the explained variance of all main effects and interactions (similar to ANOVA) to obtain partial eta squared Our analysis will focus on the interaction of the stimulus factor with all other factors relative to the main effect of the stimulus factor, as we aim to study whether a re-ordering of stimulus ratings occurs depending on the experimental conditions of model type, task format, and the examples provided. The main effect of the stimulus factor will serve as a standard of comparison for the explained variance of the above interactions. \\
+
+Regarding aim (2) we will compute the correlation between human and LLM ratings of valence and arousal using the Pearson correlation coefficient,
+
+\begin{align}
+        r_{xy} = \frac{\sum_{i=1}^n (x_i - \bar{x})\cdot(y_i - \bar{y})}{\text{SD}(x) \cdot \text{SD}(y)}.
+\end{align}
+\end{examplebox}
+
+\begin{examplebox}
+We will compute the correlation at different levels of the analysis:
+
+\begin{itemize}
+    \item (a) On the level of individual iterations in each simulation condition, we will compute the correlation between human ratings and LLM ratings across statements. The inter-rater reliability (IRR) will be estimated by the average correlation:
+    \begin{align}
+        \widehat{IRR} = \frac{\sum_{i=1}^{n_{\text{sim}}}\hat{r}_i}{n_{\text{sim}}}.
+    \end{align}
+    To assess the estimation error due to the finite number of iterations, we will compute the Monte Carlo standard error:
+    
+    \begin{align}
+         \text{MCSE}_{\widehat{IRR}} = \frac{\text{S}_{\widehat{IRR}}}{\sqrt{n_{\text{sim}}}}
+    \end{align}
+     where $\text{S}_{\widehat{IRR}} = \sqrt{\sum_{i=1}^{n_{\text{sim}}}\{ \hat{r}_i - \left( \sum_{i=1}^{n_{\text{sim}}} \hat{r}_i / n_{\text{sim}} \right \} ^2 / (n_{\text{sim}} - 1)}$ is the sample standard deviation of the estimate and $n_{\text{sim}}$ is the number of simulation iterations (see \cite{siepeSimulationStudiesMethodological2024}). 
+    \item On the level of aggregated LLM ratings (averaged across all simulation iterations in each simulation condition), we will compute the correlation between human and LLM ratings. Using a bootstrap procedure,  LLM ratings are first randomly drawn with replacement from the  iterations of a simulation condition for each stimulus and then aggregated into an average rating. These average ratings per stimulus will then be used to compute the inter-rater reliability between human-generated and LLM-generated ratings. This procedure is repeated  times to ensure that the same number of estimates is obtained as when using raw LLM ratings. 
+\end{itemize}
+\end{examplebox} 
+
+\textit{Answer:}
+
+\subsection{How will the uncertainty in the estimated performance measures be calculated and reported?} 
+    
+\explanation{The estimation uncertainty of some performance measures (such as the correlation of LLM and human ratings) is bounded by the number of stimulus items nitems and can be assessed by averaging the corresponding standard errors across simulation iterations. A different source of uncertainty is due to the stochasticity of repeated LLM ratings across iterations, which can be reported in the form of the Monte Carlo standard error (MCSE). Please see Siepe et al. \parencite*{siepeSimulationStudiesMethodological2024} and Morris, White, and Crowther \parencite*{morrisUsingSimulationStudies2019} for a list of formulae to calculate the MCSE related to common performance measures.}
+    
+\begin{examplebox}
+We will average the standard error for the estimated correlation of LLM and human ratings for the $n_{\text{items}}$  = 96 statements across iterations. This accounts for uncertainty due to the limited number of statements in the study. We will also compute Monte Carlo standard errors (MCSEs) using the formula by Siepe et al. (2024). This accounts for uncertainty regarding the limited number of simulation iterations in each condition. We will report the different types of standard errors and corresponding 95\% confidence intervals in tables and in plots.
+\end{examplebox}
+
+\textit{Answer:}
+   
+\subsection{How many simulation repetitions will be used for each condition?}  
+
+\explanation{Please also indicate whether the chosen number of simulation repetitions is based on sample size calculations, on computational constraints, rules of thumb, or any other heuristic or combination of these strategies. Formulas for sample size planning in simulation studies are provided in Siepe et al. \parencite*{siepeSimulationStudiesMethodological2024}. If there is a lack of knowledge on a quantity for computing the Monte Carlo standard error (MCSE) of an estimated performance measure (e.g., the variance of the estimator is needed to compute the MCSE for the bias), pilot simulations may be needed to obtain a guess for realistic/worst-case values.}
+    
+\begin{examplebox}
+We will perform 100 simulation iterations per condition. The number of iterations was determined based on preliminary testing with ratings of syntactic complexity \parencite{schmidtRelevanceSyntacticComplexity2024}, which showed that this number of iterations resulted in narrow MCSE 95\% confidence intervals while ensuring computational feasibility. 
+\end{examplebox}
+
+\textit{Answer:}
+
+
+\subsection{How will missing values due to false LLM output format or other reasons be handled?}
+    
+\explanation{LLM output can deviate from the allowed range of responses, resulting in false output format. If only numerical values in a predefined range are admissible, provide information on how other output (e.g., non-numeric text) will be treated. One possibility is to handle these values as missing data and report their relative occurrence rate. If a specific format has not been enforced by JSON format or other means, it is possible that some of the output may be in an open text format from which the information of interest can potentially be retrieved by further text processing. In this example case, describe the steps taken to extract relevant information from the open text format. Alternatively, it is possible to impute or exclude non-converged iterations, or to implement mechanisms that repeat certain parts of the simulation (such as repeating the prompting procedure) until valid output is obtained. Further, you may specify at which proportion of failed repetitions a whole condition will be excluded from the analysis.}
+    
+\begin{examplebox}
+LLM ratings that do not fall within the specified range of admissible rating values (integers either between 1 to 9 or between 0 to 100 depending on the condition) will be treated as missing values. We will report the proportion of such cases and exclude conditions if the proportion of missing values exceeds 20\% based on a rule of thumb.
+\end{examplebox} 
+
+\textit{Answer:}
+
+\subsection{How do you plan on interpreting the performance measures? \textmd{(optional)}}
+    
+\explanation{You can optionally specify thresholds for drawing conclusions to reduce post-hoc flexibility in interpretating the results (e.g., what are considered ‘acceptable’ and ‘unacceptable’ levels of performance and what are ‘relevant differences’ between LLMs in terms of their performance to fulfill a particular task). }
+    
+\begin{examplebox}
+Regarding our primary performance measure, we define an inter-rater reliability of $\widehat{IRR} \geq .80$ as adequate and $\widehat{IRR} \geq .70$ as acceptable in line with previous recommendations \parencite{grohUnreliabilityTestRetest2025, mathesonWeNeedTalk2019}. An inter-rater reliability of $\widehat{IRR} \geq .90$ as obtained with GPT-4o in Martínez et al. \parencite*{martinezUsingLargeLanguage2024} will be considered excellent. We consider a certain model as performing better (or worse) than these thresholds on the employed corpus of text if the MCSE 95\% CI is above (below) a threshold. We consider method X as performing better than method Y in a certain simulation condition if the lower bound for the estimated inter-rater reliability of model X ($\widehat{IRR} - 1.96 \cdot \text{MCSE}$) is greater than the upper bound for the estimated power of model Y ($\widehat{IRR} + 1.96 \cdot \text{MCSE}$). Conversely, if the 95\% CI based on the averaged standard errors of correlation coefficients between human-generated and LLM-generated ratings is above (below) the threshold above, we will conclude that a certain method is generally better (worse) than this threshold for comparable stimulus material. 
+\end{examplebox} 
+
+\textit{Answer:}
+
+\section{Other}
+\subsection{Which statistical software/packages do you plan to use?}   
+
+\explanation{Likely, not all software used can be prespecified before conducting the LLM simulation. However, the main packages used for working with LLMs are usually known in advance and should be listed here, ideally with version numbers.} 
+    
+\begin{examplebox}
+We will use \texttt{R} version 4.5.2 \parencite{rcoreteamLanguageEnvironmentStatistical2025} and the following R packages in their most recent versions: \texttt{ellmer} 0.4.0 \parencite{wickhamEllmerChatLarge2025} for standardizing the API calls to the locally installed LLMs, which are run via Ollama (\url{https://ollama.com/}), \texttt{tidyverse} 2.0.0 \parencite{wickhamWelcomeTidyverse2019} and \texttt{ggplot} 4.0.1 \parencite{wickhamGgplot2ElegantGraphics2016} packages for data analysis and visualization, and \texttt{car} 3.1-3 to calculate type-III ANOVA tables from the linear models \parencite{foxCompanionAppliedRegression2019} for decomposing the variance of the obtained LLM ratings by simulation conditions.
+\end{examplebox}
+
+\textit{Answer:}
+
+\subsection{Which computational environment do you plan to use?} 
+    
+\explanation{Please specify the operating system and its version which you intend to use. If the study is performed on multiple machines or servers, provide information for each one of them, if possible.}
+    
+\begin{examplebox}
+We will run the LLM simulation study on a Kubuntu 24.04 machine using an Nvidia GPU (RTX 5090) with the Cuda 13.0 environment. The complete output of \texttt{sessionInfo()} will be saved and reported in the supplementary materials.
+\end{examplebox}
+
+\textit{Answer:}
+
+\subsection{Which other steps will you undertake to make LLM simulation results reproducible? \textmd{(optional)}} 
+    
+\explanation{This can include sharing the code and full or intermediate results of the simulation in an open online repository. Additionally, this may include supplemental materials or interactive data visualizations, such as a shiny application.}
+    
+\begin{examplebox}
+We will upload the fully reproducible simulation script and a data set containing all LLM ratings of valance and arousal as well as the correlation between LLM ratings and human ratings including confidence intervals to OSF.
+\end{examplebox}
+
+\textit{Answer:}
+
+\subsection{Is there anything else you want to preregister? \textmd{(optional)}}
+    
+\explanation{For example, the answer could include the most likely obstacles in the repeated call of LLMs (API or local) or the simulation design, and plans to overcome them, or measures that increase the trust in the preregistration date (e.g., setting the seed based on a future event).}
+    
+\begin{examplebox}
+We will explore alternative procedures for analyzing LLM ratings for aim (1) to assess the proportion of variance explained by the different simulation factors (e.g., mixed effects models; see Section 7.1).
+\end{examplebox} 
+
+\textit{Answer:}
+
+\newpage
+\section*{References}
+\nocite{Siepe2024}
+\printbibliography[heading=none]
+
+\appendix
+\section{Prompt Examples}
+\label{appendix.promp}
+
+\subsection{Prompt Construction}
+    
+\explanation{The appendix should provide examples for the prompt instructions and verbal materials for conducting the LLM simulation study. Extensive materials such as the complete corpus of text materials or all prompt versions may be stored and made available in separate files (e.g., CSV or text files).}
+    
+\begin{examplebox}
+Each LLM prompt consists of five components that are concatenated in each iteration of the simulation: 
+\begin{enumerate}
+    \color{olive} \item An explanation of the task,
+    \color{teal} \item the range of responses allowed, 
+    \color{blue} \item examples for multi-word expressions, 
+    \color{violet} \item the target multi-word expression to be rated, and
+    \color{teal} \item a reminder for the range of responses allowed. 
+\end{enumerate}
+
+The examples below are based on Prompt 2 provided by Martínez et al. \parencite*{martinezUsingLargeLanguage2024} for ratings of valence. Ratings of arousal were analogous modifications of Prompt 3 (not provided here). \\
+
+\textbf{Example prompt with examples of low and high valence (original version of Prompt 2 in Martínez et al.): \\}
+\color{olive}Could you please rate how reading the following multi-word expression makes a person feel. \color{teal}Use a scale from 1 to 9, where 1 means very negative, bad and 9 means very positive, good. \color{blue}Examples of words that would get a rating of 1 are pedophile, AIDS, and wreck. Examples of words that would get a rating of 9 are vacation, fantastic, and laugh. \color{violet}The expression is: [insert expression here]. Only answer a number from 1 to 9. \color{teal}Please limit your answer to numbers. \\
+
+\color{black}\textbf{Example prompt with only examples of low valence: \\}
+\color{olive}Could you please rate how reading the following multi-word expression makes a person feel. \color{teal}Use a scale from 1 to 9, where 1 means very negative, bad and 9 means very positive, good. \color{blue}Examples of words that would get a rating of 1 are pedophile, AIDS, and wreck. \color{violet}The expression is: [insert expression here]. \color{teal}Only answer a number from 1 to 9. Please limit your answer to numbers. \\
+
+\color{black}Examples for multi-word expressions are (taken from \cite{martinezUsingLargeLanguage2024}):
+\begin{itemize}
+    \item hit rock bottom
+    \item fall in love
+    \item ice cream cone
+    \item drug addict
+    \item starry sky
+\end{itemize}
+\end{examplebox}  
+
+
+\end{document}
