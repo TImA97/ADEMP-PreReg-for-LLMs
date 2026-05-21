@@ -2,7 +2,8 @@
 
 This documentation of the modified ADEMP-PreReg template for LLM simulations is based on the documentation of the ADEMP Pre-Reg tempalte for simulation studies by Siepe et al. (2024, <https://github.com/bsiepe/ADEMP-PreReg>).
 
-This repository contains the ADEMP preregistration (ADEMP-PreReg) template for conducting LLM Simulation Studies proposed by Angelike and Heck (2026, <LINK XXX>). The template is modified version of the ADEMP template for simulation studies in methodological research by Siepe et al. (2024, <https://doi.org/10.1037/met0000695>). The ADEMP structure was originally proposed by Morris et al. (2019, <https://doi.org/10.1002/sim.8086>). The ADEMP template for LLM simulation studies can be employed in any studies that aims at evaluating the quality of LLM-generated output.
+This repository contains the ADEMP preregistration (ADEMP-PreReg) template for conducting LLM Simulation Studies proposed by Angelike and Heck (2026, <LINK XXX>). The template is modified version of the ADEMP template for simulation studies in methodological research by Siepe et al. (2024, paper: <https://doi.org/10.1037/met0000695>, github: <https://github.com/bsiepe/ADEMP-PreReg>). The ADEMP structure was originally proposed by Morris et al. (2019, <https://doi.org/10.1002/sim.8086>). The modified ADEMP template for LLM simulation studies can be employed in any study that aims at systematically evaluating the quality of LLM-generated output.
+
 ## How to use it?
 There are multiple options to use the ADEMP-PreReg template:
 
@@ -13,7 +14,7 @@ After filling out your preferred version of the template, you can upload and tim
 When using the Open Science Framework, you may, for example, upload the template as part of the open-ended OSF registration (see [here](https://osf.io/zab38/wiki/home/)). The template includes example sections guiding users through the process of applying it to your own research. 
 
 ## Feedback
-We hope to continuously improve the template and invite interested researchers to suggest improvements to the template. Please feel free to open an Issue or a Pull Request in this repository to voice any questions, criticism, or feedback on the template. If you do not wish to do that, you can also contact us at bjoernsiepe [at] gmail [dot] com.
+We hope to continuously improve the template and invite interested researchers to suggest improvements to the template. Please feel free to open an Issue or a Pull Request in this repository to voice any questions, criticism, or feedback on the template. If you do not wish to do that, you can also contact us at tim.angelike [at] uni-marburg [dot] de.
 
 To modify the template and open a Pull Request, please modify the `ADEMP-PreReg.tex` file. This file can then be converted to `ADEMP-PreReg.docx` by running `make docx` (requires pandoc).
 
@@ -28,6 +29,7 @@ A BibTeX entry is given by
 ```BibTeX
 XXXX
 ```
+
 ## License
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
