@@ -22,12 +22,22 @@ To modify the template and open a Pull Request, please modify the `ADEMP-PreReg.
 ## Citation
 When you use our template, please cite the associated publication
 
-REFERENCE XXXX
+Angelike, T., & Heck, D. W. (2026). Evaluating Large Language Models for Feature Extraction from Verbal Stimuli: A Simulation-Based Workflow (Xphm9_v1). PsyArXiv. https://osf.io/preprints/psyarxiv/xphm9_v1/
+
 
 A BibTeX entry is given by
 
 ```BibTeX
-XXXX
+@misc{
+  title = {Evaluating {{Large Language Models}} for {{Feature Extraction}} from {{Verbal Stimuli}}: {{A Simulation-Based Workflow}}},
+  shorttitle = {Evaluating {{Large Language Models}} for {{Feature Extraction}} from {{Verbal Stimuli}}},
+  author = {Angelike, Tim and Heck, Daniel W},
+  year = 2026,
+  month = may,
+  number = {xphm9\_v1},
+  publisher = {PsyArXiv}
+}
+
 ```
 
 ## License
