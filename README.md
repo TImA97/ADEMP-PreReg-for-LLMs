@@ -26,14 +26,12 @@ Angelike, T., & Heck, D. W. (2026). Evaluating Large Language Models for Feature
 A BibTeX entry is given by
 
 ```BibTeX
-@misc{
-  title = {Evaluating {{Large Language Models}} for {{Feature Extraction}} from {{Verbal Stimuli}}: {{A Simulation-Based Workflow}}},
-  shorttitle = {Evaluating {{Large Language Models}} for {{Feature Extraction}} from {{Verbal Stimuli}}},
-  author = {Angelike, Tim and Heck, Daniel W},
-  year = 2026,
-  month = may,
-  number = {xphm9\_v1},
-  publisher = {PsyArXiv}
+@misc{AngelikeHeckLLMs2026, 
+	title={Evaluating Large Language Models for Feature Extraction from Verbal Stimuli: A Simulation-Based Workflow}, 
+	publisher={PsyArXiv}, 
+  doi={https://doi.org/10.31234/osf.io/xphm9_v1},
+	author={Angelike, Tim and Heck, Daniel W}, 
+	year={2026}
 }
 
 ```
