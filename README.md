@@ -29,7 +29,7 @@ A BibTeX entry is given by
 @misc{AngelikeHeckLLMs2026, 
 	title={Evaluating Large Language Models for Feature Extraction from Verbal Stimuli: A Simulation-Based Workflow}, 
 	publisher={PsyArXiv}, 
-  doi={https://doi.org/10.31234/osf.io/xphm9_v1},
+    doi={https://doi.org/10.31234/osf.io/xphm9_v1},
 	author={Angelike, Tim and Heck, Daniel W}, 
 	year={2026}
 }
