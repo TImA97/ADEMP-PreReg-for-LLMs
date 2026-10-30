@@ -22,11 +22,12 @@ preprocess: ADEMP-PreReg.tex configurations.tex bibliography.bib
 # make sure that pandoc and pandoc-citeproc are installed
 # e.g., in Ubuntu: sudo apt install pandoc pandoc-citeproc
 docx: preprocess
-	pandoc --citeproc --bibliography=bibliography.bib --reference-doc reference.docx \
-  -o ADEMP-PreReg.docx ADEMP-PreReg-preprocessed.tex
+	pandoc --lua-filter=unnumbered.lua --citeproc --bibliography=bibliography.bib \
+  --reference-doc reference.docx -o ADEMP-PreReg.docx ADEMP-PreReg-preprocessed.tex
 
 odt: preprocess
-	pandoc --citeproc --bibliography=bibliography.bib -o ADEMP-PreReg.odt ADEMP-PreReg-preprocessed.tex
+	pandoc --lua-filter=unnumbered.lua --citeproc --bibliography=bibliography.bib \
+  -o ADEMP-PreReg.odt ADEMP-PreReg-preprocessed.tex
 
 clean:
 	rm ADEMP-PreReg.aux ADEMP-PreReg.blg ADEMP-PreReg.log ADEMP-PreReg.bbl ADEMP-PreReg.out ADEMP-PreReg.bcf ADEMP-PreReg.run.xml ADEMP-PreReg-preprocessed.tex title.tex titlepage.tex

@@ -6,7 +6,7 @@ This repository contains the ADEMP preregistration (ADEMP-PreReg) template for c
 There are multiple options to use the ADEMP-PreReg template:
 
 1. Use the .docx version in this repository (`ADEMP-PreReg.docx`)
-2. Use the LaTeX version in this repository (`ADEMP-PreReg.tex` and `configuration.tex`).
+2. Use the LaTeX version in this repository (`ADEMP-PreReg.tex` and `configurations.tex`).
 
 After filling out your preferred version of the template, you can upload and timestamp your preregistration at the service of your choice, for example, at the [Open Science Framework](https://help.osf.io/article/158-create-a-preregistration) or [Zenodo](https://zenodo.org/).
 When using the Open Science Framework, you may, for example, upload the template as part of the open-ended OSF registration (see [here](https://osf.io/zab38/wiki/home/)). The template includes example sections guiding users through the process of applying it to your own research. 
@@ -20,14 +20,14 @@ To modify the template and open a Pull Request, please modify the `ADEMP-PreReg.
 ## Citation
 When you use our template, please cite the associated publication
 
-Angelike, T., & Heck, D. W. (2026). Evaluating Large Language Models for Feature Extraction from Verbal Stimuli: A Simulation-Based Workflow (Xphm9_v1). PsyArXiv. https://osf.io/preprints/psyarxiv/xphm9_v1/
+Angelike, T., & Heck, D. W. (2026). Evaluating Ratings from Large Language Models: A Simulation-Based Workflow. PsyArXiv. https://osf.io/preprints/psyarxiv/xphm9_v1/
 
 
 A BibTeX entry is given by
 
 ```BibTeX
 @misc{AngelikeHeckLLMs2026, 
-	title={Evaluating Large Language Models for Feature Extraction from Verbal Stimuli: A Simulation-Based Workflow}, 
+	title={Evaluating Ratings from Large Language Models: A Simulation-Based Workflow},
 	publisher={PsyArXiv}, 
     doi={10.31234/osf.io/xphm9_v1},
 	author={Angelike, Tim and Heck, Daniel W}, 

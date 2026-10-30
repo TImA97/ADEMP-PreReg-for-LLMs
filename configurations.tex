@@ -1,7 +1,7 @@
 \usepackage[english]{babel}
 
 \title{\textbf{\textsf{ADEMP-PreReg \\ Template for Simulation Studies}}}
-\date{\today}
+\date{October 30, 2026}
 \author{}
 
 % math
@@ -55,6 +55,7 @@
 %\usepackage{tcolorbox}             
 
 \usepackage{tcolorbox}
+\tcbuselibrary{breakable}
 \newtcolorbox{examplebox}[1][]{                                                                     colback=white,                                                                                  colframe=gray!30,                                                                               title=Example,                                                                                  sharp corners,                                                                                  boxrule=0.5pt                     
 }
 
@@ -68,7 +69,7 @@
 \newboolean{showexplanations}
 \renewenvironment{examplebox}{%
   \ifthenelse{\boolean{showexamples}}%
-    {\begin{tcolorbox}[colback=white, colframe=gray!30, title=Example, sharp corners, boxrule=0.5pt, coltitle=black]}%
+    {\begin{tcolorbox}[breakable, colback=white, colframe=gray!30, title=Example, sharp corners, boxrule=0.5pt, coltitle=black]}%
     {\expandafter\comment}%
 }{%
   \ifthenelse{\boolean{showexamples}}%
@@ -97,10 +98,10 @@
         \thispagestyle{empty}
         \vfill 
         \centering
-        Version: 1.0 \\
-        Last updated: 2026-05-27 \\
+        Version: 2.0 \\
+        Last updated: 2026-10-30 \\
         Template based on the papers: \\
-        Angelike, T, \& Heck, D. W. (2026). Evaluating Large Language Models for Feature Extraction from Verbal Stimuli: A Simulation-Based Workflow. \url{https://doi.org/10.31234/osf.io/xphm9_v1} \\ 
+        Angelike, T., \& Heck, D. W. (2026). Evaluating Ratings from Large Language Models: A Simulation-Based Workflow. \url{https://osf.io/preprints/psyarxiv/xphm9} \\
         and \\
         Siepe, B. S., Bartoš, F., Morris, T. P., Boulesteix, A.-L., Heck, D. W., \& Pawel, S. (2024). Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting. \textit{Psychological Methods}. \url{https://doi.org/10.1037/met0000695}, \url{https://doi.org/10.31234/osf.io/ufgy6}
         \vfill 
