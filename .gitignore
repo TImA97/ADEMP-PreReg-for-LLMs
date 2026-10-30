@@ -1,0 +1,27 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# intermediate files created by `make docx` / `make odt`
+ADEMP-PreReg-preprocessed.tex
+title.tex
+titlepage.tex
+
+# editor / OS files
+*~
+.DS_Store
+*.kate-swp
+.~lock.*#
+
+# Note: ADEMP-PreReg.pdf, ADEMP-PreReg.docx and reference.docx are part of the
+# repository and are therefore not ignored.
